@@ -12,6 +12,6 @@ public class KondetPetineHelloWorld {
     } // end myName
     public static void main(String[] args) 
     {
-       myName("Petine","Kondet"); // Call the myName() method 
+       myName(firstName:"Petine",lastName:"Kondet"); // Call the myName() method 
     } // end main
 } // end KondetPetineHelloWorld 
