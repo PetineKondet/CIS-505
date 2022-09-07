@@ -1,107 +1,81 @@
-/*
-Write a program with a class titled Fan. This class is to contain:
-1. Four constants named STOPPED, SLOW, MEDIUM, and FAST with values 0, 1, 2, and
-3 to represent the fans speed.
-2. A private int data field named speed that specifies the speed of the fan. Use the constants
-and set the default speed to STOPPED.
-3. A private boolean data field named on that specifies whether the fan is on or off. The
-default is off (i.e., false).
-4. A private double data field named radius that specifies the radius of the fan. The default
-is 6.
-5. A private string data field named color that specifies the color of the fan. The default is
-white.
-6. Accessor and mutator methods for all four data fields.
-7. A no-argument constructor that creates a default fan (set all fields to their default values).
-8. An argument constructor that creates a fan using the four fields as arguments.
-9. Override the toString method. Return a string description for the fan. If the fan is on, the
-method returns the fan speed, color, and radius in a combined string. If the fan is not on,
-the method returns the fan color, radius, and a message of “fan is off” in a combined
-string.
-10. Create a new file named TestFanApp with a main() method to test the Fan class. Create
-two instances of the Fan class, one using the default constructor and the other using the
-argument constructor. For the second argument constructor, use the classes constants to
-set the speed. Display the objects by invoking the classes toString() method
-
+/*  
+    Fan Class -
+    
 */
-public class Fan {
-	final static int SLOW = 1;
-	final static int MEDIUM = 2;
-	final static int FAST = 3;
-	private int speed;
-	private boolean on;
-	private double radius;
-	String color;
-
-	/** Constructor that creates a default fan */
-	Fan() {
-		speed = SLOW;
-		on = false;
-		radius = 5;
-		color = "blue";
-	}
-
-	/** Mutator methods */
-	/** Sets speed */
-	public void setSpeed(int newSpeed) {
-		speed = newSpeed;
-	}
-
-	/** Sets fan on */
-	public void turnOn() {
-			on = true;
-	}
-
-	/** Sets fan off */ 
-	public void turnOff() {
-			on = false;
-	}
-
-	/** Sets color */
-	public void setColor(String newColor) {
-		color = newColor;
-	}
-
-	/** Sets radius */
-	public void setRadius(double newRadius) {
-		radius = newRadius;
-	}
-
-	/** Accessor methods */
-	/** Return speed */
-	public String getSpeed() {
-		String s = "";
-		switch (speed) {
-			case SLOW: s = "SLOW"; break;
-			case MEDIUM: s = "MEDIUM"; break;
-			case FAST: s = "FAST";
-		}
-		return s;
-	}
-
-	/** Return on */
-	public boolean isOn() {
-		return on;
-	}
-
-	/** Return radius */
-	public double getRadius() {
-		return radius;
-	}
-
-	/** Return color */
-	public String getColor() {
-		return color;
-	}
-
-	/** Returns a string description for the fan */
-	public String toString() {
-		if (on == true) {
-			return "\nFan speed: " + getSpeed() + ", color: " + color + 
-					 ", radius: " + radius + "\n";
-		}
-		else{
-			return "\nFan color: " + color + ", radius: " + radius +
-					 "\nfan is off\n";
-		}
-	}
-}
+  // -----------------------------------
+  public class Fan {
+    // -----------------------------------
+    // Declaring the constants
+    final int STOPPED = 0; // Default speed is 0
+    final int SLOW = 1; // Default speed is 1
+    final int MEDIUM = 2; // Default speed is 2
+    final static int FAST = 3; // speed is 3
+    // ----------------------------------- 
+    // non-constant variables
+    private boolean on = false; // Initialized fan state
+    private int speed = STOPPED; // Initialized fan speed
+    private double radius = 6.0; //Initialized fan radius
+    private String color = "white"; //Initialized fan color
+    // -----------------------------------
+    //  on/off methods   
+    public void turnOn() {
+      on = true;
+    }
+    public void turnOff() {
+      on = false;
+    }
+    // -----------------------------------
+    // on/off getter and setter methods
+    public boolean getOn() {
+      return on;
+    }
+    public void setOn(boolean newOn) {
+      on = newOn;
+    }
+    // -----------------------------------
+    public int getSpeed() {
+      return speed;
+    }
+    public void setSpeed(int newSpeed) {
+      speed = newSpeed;
+    }
+    // -----------------------------------
+    // radius getter and setter methods
+    public double getRadius() {
+      return radius;
+    }
+    public void setRadius(double newRadius) {
+      radius = newRadius;
+    }
+    // -----------------------------------
+    // color getters and setter methods
+    public String getColor() {
+      return color;
+    }
+    public void setColor(String newColorLevel) {
+      color = newColorLevel;
+    }
+    // Constructors - are down here so they can use setter methods above 
+    public Fan() {
+      setOn(false); // By default Fan state is "off"
+      setSpeed(STOPPED); // Default speed is STOPPED
+      setRadius(10.0); //default fan radius
+      setColor("white"); //default fan color
+    }//end default constructor
+    public Fan(boolean newOn, int newSpeed, double newRadius, String newColor) {
+      this.on = newOn;
+      this.speed = newSpeed;
+      this.radius = newRadius;
+      this.color = newColor;
+    }//end constructor
+    // -----------------------------------
+    //toString() - overridden to show fan state
+    public String toString(){
+      if (getOn() == true) {
+        return "The fan is on and the fan speed is " + getSpeed() + ".  The fan color is " + getColor() + " and the fan radius is " + getRadius();
+      }
+      else {
+        return "The fan is off and the fan speed is " + getSpeed() + ".  The fan color is " + getColor() + " and the fan radius is " + getRadius();
+      }
+    }//end toString () override
+}  //end Fan
