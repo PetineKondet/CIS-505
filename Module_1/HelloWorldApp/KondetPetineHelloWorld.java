@@ -1,4 +1,12 @@
-
+/*  
+    
+    
+    Krasso, R., (2021). CIS 505 Intermediate Java Programming. Bellevue University, all
+        rights reserved.
+    
+    Modified by Kondet Petine 2022
+ 
+*/
 public class KondetPetineHelloWorld {
  
     public static void myName(String firstName, String lastName) 
