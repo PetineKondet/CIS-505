@@ -35,15 +35,8 @@ Students who successfully complete this course should be able to:
 * finally
 * Defensive Programming
 
-## Repository Overview
-Carefully read the assigned chapters, videos, and narrative I've included under each module.
 
-Approach this course from top-to-bottom and do not move on to the next module without fully understanding the previous one.  The Reading & Videos section are critical to learning the material.  Do not just scan over what I've provided.  
 
-```bash
-git clone https://github.com/buwebdev/cis-505.git
-cd cis-505
-```
 
 ## Textbooks Companion Website
 * https://media.pearsoncmg.com/ph/esm/ecs_liang_ijp_12/cw/ 
